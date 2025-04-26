@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 38</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 38: ¡Nuestra Propia Aventura Interactiva!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Kinderbot y 10 iBricks por cada pareja. Kinderbots cargados. Papel y crayones opcionales para dibujar ideas.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Directores de Historias! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Pasar de seguir historias a crearlas, empoderando a los niños como autores y directores.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda como si fueran directores de cine o teatro listos para crear.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Luces, cámara... ACCIÓN, CODE SQUAD! ¡Hoy no somos solo programadores, hoy somos ESCRITORES y DIRECTORES de nuestras propias aventuras! ¿Recuerdan todas las historias que hemos vivido con Kinderbot? La granja, el templo, la carrera... ¡Hoy ustedes inventarán la próxima gran historia!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que necesitan activar la imaginación y la lógica para crear una historia con decisiones.</td>
+                <td>
+                     <div class="dialogue">
+                        "Para crear una historia increíble, ¡nuestra imaginación tiene que volar alto! Y para que Kinderbot pueda actuar en nuestra historia, ¡nuestra lógica tiene que estar súper afinada para planear sus movimientos! ¡Vamos al Gimnasio Cerebral a despertar la creatividad y la planificación de escenas!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar secuencias de movimiento que puedan representar acciones o emociones simples en una historia.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, animando a pensar qué "sentimiento" o "acción" podría representar cada movimiento.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Directores, a bailar! ¡Cada movimiento en este baile puede ser una acción en nuestra historia! 'Adelante' puede ser caminar... 'Girar' puede ser mirar sorprendido... ¡'Atrás' puede ser tener un poco de miedo! ¡Sigan la música y piensen qué podría estar haciendo un personaje con estos pasos! ¡Vamos a crear!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - ¡Se Busca Historia! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🎬 Actividad 3: ¡Creando la Trama! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Explicar los elementos básicos de la historia a crear (personaje, inicio, elección, dos finales) y el reto de construir y programar una rama.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Explica que Kinderbot será el actor principal y necesita una historia con una decisión importante.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Muy bien, directores! Nuestro actor estrella hoy es... ¡Kinderbot! (Aplausos imaginarios). ¡Pero Kinderbot necesita un guion, una historia! Y no cualquier historia, ¡una historia donde él tenga que tomar una DECISIÓN! Como elegir entre dos caminos, o dos acciones diferentes. ¡Ustedes van a inventar esa historia!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: Inventar una mini-historia (inicio, personaje Kinderbot, punto de elección, 2 destinos/acciones). Construir el escenario con iBricks. Elegir UNA de las opciones y programar esa ruta/acción para Kinderbot.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Manos a la obra creativa! La misión es: 1. Inventen una historia cortita. ¿Quién es Kinderbot hoy? ¿Un explorador, un mensajero, un animalito? ¿Dónde empieza? 2. ¡Lo más importante! Piensen en un momento donde Kinderbot tiene que ELEGIR entre dos cosas. ¿Ir a la montaña o al río? ¿Saludar al gato o al perro? ¿Comer una manzana o una banana? 3. Construyan el escenario con los bloques: el inicio, el punto de elección (donde se separan los caminos o están las dos opciones), y los dos posibles finales (la montaña y el río, el gato y el perro...). 4. Finalmente, elijan UNA de las opciones de su historia y ¡programen a Kinderbot para que haga esa parte! ¿Listos para ser escritores, constructores y programadores?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Estudios Cinematográficos Gnius! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas (estudios) para colaborar en la creación de la historia, escenario y programa.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que las mejores películas (historias) se hacen en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Directores y guionistas! ¡Crear una película o una obra de teatro es un trabajo de equipo! ¡Se necesitan muchas ideas juntas! ¡Vamos a formar nuestros propios Estudios Cinematográficos Gnius! ¡Cada estudio (pareja) creará una mini-película interactiva para Kinderbot! ¡Encuentren a su socio creativo!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a empezar a lanzar ideas para su historia y su escenario.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Estudios formados? ¡Genial! Ahora, ¡la lluvia de ideas! ¿De qué tratará su historia? ¿Qué elección tendrá que hacer Kinderbot? ¿Cómo será el escenario? ¡Hablen, dibujen, imaginen! ¡Creen la historia más original!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Creando y Programando la Escena! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">⌨️ Actividad 5: ¡Dando Vida a Nuestra Historia! ⏰ Tiempo: 8 minutos</div>
+        <div class="subtitle">Objetivo: Crear la historia, construir el escenario básico y programar la secuencia de Kinderbot para UNA de las ramas elegidas.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+            <!-- Paso Común: Crear Historia y Escenario -->
+             <tr>
+                <td><strong>PASO 1 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Diseñando la Aventura!". Guía para que definan su historia (personaje, inicio, elección, 2 finales) y construyan el escenario básico con iBricks (inicio, bifurcación, 2 destinos simples). Repasa botones A, G Izq/Der, At.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Estudios Gnius, a crear! Tomen sus bloques y construyan el mundo de su historia: ¿Dónde empieza Kinderbot? ¿Dónde está la encrucijada o el punto de decisión? ¿Y dónde están los dos finales posibles (la montaña, el río, el gato, el perro...)? ¡Construyan el escenario! Mientras, recuerden los movimientos: Adelante, Girar Izquierda, Girar Derecha, Atrás. ¡Los necesitaremos para darle vida!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Misión K1: Una Escena Simple". Historia muy simple. Elegir UNA rama. Programar 4-5 pasos directos para llegar al destino elegido.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su historia es genial! Ahora, elijan: ¿Kinderbot va a la opción A o a la opción B? (Señala los destinos que construyeron). ¡Muy bien! Ahora programen el camino para llegar AHÍ. Quizás necesiten: 'Adelante' hasta la división, 'Girar' hacia su elección, y 'Adelante', 'Adelante' hasta llegar. ¡Unos 4 o 5 pasos! ¡Programen esa escena! ¡Sin 'Go'!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Misión K2: Una Escena Detallada". Historia con más detalle. Elegir UNA rama. Programar 6-7 pasos, quizás con algún giro extra o paso atrás si la historia lo requiere.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Estudios K2! ¡Su historia tiene más acción! Elijan: ¿Kinderbot hace la acción A o la acción B? ¡Perfecto! Ahora, programen esa parte. Quizás necesite avanzar, girar, avanzar un poco más, ¡tal vez incluso retroceder si su historia lo dice! ¡Planean una secuencia de 6 o 7 pasos para representar esa parte de SU historia! ¡Programen con cuidado! ¡Sin activar 'Go'!"
+                    </div>
+                </td>
+            </tr>
+            <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Misión K3: ¡Escena con Problema!". Historia con un pequeño problema en el camino elegido (ej. iBrick-roca a esquivar). Programar 8 pasos para resolver el problema y llegar al destino elegido.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Directores K3! ¡En su historia, añadan un pequeño problema en el camino que eligieron! Por ejemplo, si Kinderbot va a la montaña, ¡quizás haya una roca (otro bloque) en medio! Elijan su destino y ¡programen cómo Kinderbot resuelve el problema y llega! Necesitarán 8 pasos: avanzar, girar para esquivar, avanzar, girar de nuevo, avanzar... ¡Planean la solución dentro de SU historia! ¡Programen la secuencia completa de 8 pasos! ¡Sin presionar 'Go'!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Estreno Mundial! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-historia')">
+        <div class="title">🚀 Actividad 6: ¡Se Estrena Nuestra Historia! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar el código de la rama elegida, narrar la historia simultáneamente y observar el resultado. Opcional (K3): presentar a otra pareja.</div>
+    </div>
+    <div id="probando-historia" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!". Anima a poner a Kinderbot al inicio, presionar 'Go' y narrar la historia mientras Kinderbot se mueve hacia el destino elegido. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Silencio en el set! ¡Es hora del estreno! Pongan a Kinderbot en el inicio. ¿Listos con su código? ¡Presionen 'Go'! Y mientras Kinderbot se mueve... ¡cuenten su historia! 'Kinderbot el explorador avanzó... decidió ir a la montaña... ¡y llegó!' ¡Bravo! ¡Su primera historia interactiva!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!". Anima a poner a Kinderbot al inicio, presionar 'Go' y narrar la historia más detallada mientras Kinderbot ejecuta los 6-7 pasos. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Estudios K2! ¡Prepárense para el estreno! ¡Kinderbot en posición! ¿Listos con su código de 6-7 pasos? ¡Acción! ¡Presionen 'Go'! ¡Cuenten su historia mientras Kinderbot se mueve! 'Kinderbot, el valiente caballero, avanzó, giró para saludar al dragón...' ¡Veamos si hace todo lo que programaron! ¡Fantástico! ¡Una historia con más pasos!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!". Anima a poner a Kinderbot al inicio, presionar 'Go' y narrar la historia con el problema y la solución mientras Kinderbot ejecuta los 8 pasos. Opcional: Presentar a otra pareja. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Directores K3! ¡El gran estreno de su película con efectos especiales (el problema)! ¡Kinderbot listo! ¿Código de 8 pasos preparado? ¡Acción! ¡Presionen 'Go'! ¡NARRADORES, cuenten! 'Kinderbot iba hacia el castillo, pero ¡oh no, una roca! La esquivó girando...' ¡Miren si Kinderbot resuelve el problema como ustedes lo planearon! ¡Increíble! ¡Han creado y resuelto un problema en su propia historia! (Opcional): ¿Quieren mostrarle su película a otra pareja?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7: Mensaje del Cuartel (Omitida para Misión 38) -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Aplausos para los Creadores! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar la creatividad, reforzar la conexión entre narrativa, elección y secuencia de código.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Cierra celebrando sus historias. Realiza preguntas de reflexión sobre el proceso creativo y de programación.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡BRAVOOOO! ¡Un aplauso gigante para los increíbles directores, escritores, constructores y programadores del CODE SQUAD! ¡Hoy han creado sus propias aventuras interactivas y le han dado vida con Kinderbot! ¡Fue fantástico ver sus ideas en acción! Pensemos en esta misión tan creativa:
+1. ¿Qué fue lo más divertido hoy: inventar la historia, construir el escenario o programar a Kinderbot?
+2. ¿Cómo decidieron qué camino o acción programar para Kinderbot en su historia?
+3. ¿Creen que Kinderbot podría actuar en OTRA historia diferente que inventemos otro día? (¡Claro!)
+¡Han demostrado que la programación no es solo seguir instrucciones, sino también CREARLAS para contar nuestras propias historias! ¡Son unos verdaderos genios creativos! ¡Felicidades!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active');
+        } else {
+            content.style.display = "block";
+            parentActivity.classList.add('active');
+        }
+    }
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             el.style.display = 'table-row';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
